@@ -436,11 +436,11 @@ input, select, textarea { font-family: inherit; border: none; outline: none; }
   transform: scale(1);
 }
 
-/* ---- Left panel: white diagonal overlay on top of slider ---- */
+/* ---- Left panel: light-gray diagonal overlay on top of slider ---- */
 .hero__bg-left {
   position: absolute;
   inset: 0;
-  background: var(--color-white);
+  background: var(--color-off-white);
   /* Diagonal: covers left ~65%, angled cut */
   clip-path: polygon(0 0, 68% 0, 52% 100%, 0 100%);
   z-index: 2;
@@ -547,11 +547,15 @@ input, select, textarea { font-family: inherit; border: none; outline: none; }
   flex-wrap: wrap;
 }
 
-/* ---- Thumbnail row ---- */
+/* ---- Thumbnail row in white container ---- */
 .hero__thumbs {
-  display: flex;
+  display: inline-flex;
   gap: 0.75rem;
   align-items: center;
+  background: var(--color-white);
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .hero__thumb {
