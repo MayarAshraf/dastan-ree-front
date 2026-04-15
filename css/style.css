@@ -4,6 +4,13 @@
    BEM Naming Convention
    ============================================ */
 
+/* Register --paint for smooth interpolation */
+@property --paint {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
 /* ---------- Design Tokens ---------- */
 :root {
   /* Brand Colors — from Dastan PDF */
@@ -1218,6 +1225,41 @@ input, select, textarea { font-family: inherit; border: none; outline: none; }
   width: 32px;
   border-radius: 4px;
 }
+
+
+/* ============================================
+   SCROLL-PAINT — Text fills with color as you scroll
+   Starts light/faded, paints to dark proportionally
+   Resets when scrolled away, replays on re-entry
+   ============================================ */
+
+/* ---- Heading paint fill ----
+   Uses background-clip:text with a hard-stop gradient.
+   JS sets --paint custom property (0 → 100) based on scroll.
+*/
+.cinema-reveal {
+  --paint: 0;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--color-heading) calc(var(--paint) * 1%),
+    rgba(var(--color-primary-rgb), 0.15) calc(var(--paint) * 1%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  will-change: --paint;
+}
+
+/* White-on-dark variant (for dark sections like properties) */
+.properties .cinema-reveal {
+  background-image: linear-gradient(
+    to right,
+    var(--color-white) calc(var(--paint) * 1%),
+    rgba(255, 255, 255, 0.18) calc(var(--paint) * 1%)
+  );
+}
+
 
 
 /* ============================================

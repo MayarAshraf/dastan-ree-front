@@ -13,6 +13,7 @@
     initMobileMenu();
     initHeroSlider();
     initSwipers();
+    initCinemaReveal();
     initScrollReveal();
     initCounterAnimation();
     initSmoothScroll();
@@ -230,6 +231,68 @@
       }
     });
   }
+
+  /* ==========================================
+     SCROLL-PAINT — Text fills color as you scroll
+     --paint CSS var goes 0→100 based on scroll
+     progress through the element. Resets when out
+     of view, replays on re-entry.
+     ========================================== */
+  function initCinemaReveal() {
+    // Collect all paint elements
+    var allPaint = document.querySelectorAll(
+      '.cinema-reveal'
+    );
+
+    if (!allPaint.length) return;
+
+    // Each element tracks its own progress
+    function updatePaint() {
+      var winH = window.innerHeight;
+
+      allPaint.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        var elH = rect.height;
+
+        // Start painting when element top enters bottom 85% of viewport
+        // Fully painted when element top reaches 35% from top of viewport
+        var startLine = winH * 0.85;
+        var endLine = winH * 0.35;
+
+        var progress;
+
+        if (rect.top >= startLine) {
+          // Below viewport threshold — not started
+          progress = 0;
+        } else if (rect.top <= endLine) {
+          // Past the end line — fully painted
+          progress = 100;
+        } else {
+          // In between — interpolate linearly
+          progress = ((startLine - rect.top) / (startLine - endLine)) * 100;
+        }
+
+        // Clamp 0–100
+        progress = Math.max(0, Math.min(100, progress));
+
+        el.style.setProperty('--paint', progress);
+      });
+
+      rafId = requestAnimationFrame(updatePaint);
+    }
+
+    var rafId = requestAnimationFrame(updatePaint);
+
+    // Pause when tab is hidden for performance
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId);
+      } else {
+        rafId = requestAnimationFrame(updatePaint);
+      }
+    });
+  }
+
 
   /* ==========================================
      SCROLL REVEAL — IntersectionObserver
