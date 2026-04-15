@@ -150,10 +150,17 @@
       spaceBetween: 24,
       grabCursor: true,
       speed: 700,
-      loop: false,
+      loop: true,
+      loopAdditionalSlides: 3,
+      slidesPerGroup: 1,
+      watchOverflow: false,
       navigation: {
         prevEl: "#projPrev",
         nextEl: "#projNext",
+      },
+      autoplay: {
+        delay: 4200,
+        disableOnInteraction: false,
       },
       breakpoints: {
         480: {
@@ -169,22 +176,23 @@
           spaceBetween: 24,
         },
         1280: {
-          slidesPerView: 3.5,
-          spaceBetween: 28,
+          slidesPerView: 3,
+          spaceBetween: 24,
         },
       },
     });
 
     // ---- Properties Slider ----
     // Centered, cinematic card focus with fade-up active slide
-    var propertiesSwiper = new Swiper("#propertiesSwiper", {
+    new Swiper("#propertiesSwiper", {
       slidesPerView: 1.18,
       centeredSlides: true,
       spaceBetween: 18,
       grabCursor: true,
       speed: 800,
       loop: true,
-      loopAdditionalSlides: 0,
+      loopAdditionalSlides: 3,
+      loopedSlides: 3,
       slidesPerGroup: 1,
       watchOverflow: false,
       watchSlidesProgress: true,
@@ -214,13 +222,6 @@
           slidesPerView: 3,
         },
       },
-    });
-
-    // Safety guard: keep carousel moving seamlessly if loop edge is reached.
-    propertiesSwiper.on("slideChangeTransitionEnd", function () {
-      if (propertiesSwiper.isEnd) {
-        propertiesSwiper.slideToLoop(0, 0, false);
-      }
     });
   }
 
