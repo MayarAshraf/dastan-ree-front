@@ -22,6 +22,32 @@
 </head>
 <body>
 
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div class="splash" id="splash">
+    <!-- Low-opacity pattern background -->
+    <div class="splash__pattern"></div>
+    <!-- Diagonal accent line -->
+    <div class="splash__center">
+      <!-- D-mark: stroke-draw SVG -->
+      <svg class="splash__icon" viewBox="0 0 100 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer frame path -->
+        <path class="splash__path splash__path--1" d="M0.17 0.56L99.7 55.09V153.6L24.49 205.39L24.83 54.73C24.79 53.7 25.16 52.72 25.86 51.96C26.55 51.19 27.51 50.75 28.55 50.71C29.56 50.7 30.55 51.02 31.32 51.73C32.09 52.44 32.54 53.39 32.58 54.43L31.69 190.63L48.21 179.72L49.99 65.45L91.95 91.35V59.81L7.87 12.09L8.04 201.34C8.14 203.46 6.48 205.28 4.34 205.38L4.16 205.39C2.09 205.39 0.39 203.75 0.29 201.68L0.17 0.56Z" stroke="#0A1E77" stroke-width="1.2" fill="none"/>
+        <!-- Inner window path -->
+        <path class="splash__path splash__path--2" d="M58.2 78.4L55.78 174.37L91.95 149.57V100.07L58.2 78.4Z" stroke="#0A1E77" stroke-width="1.2" fill="none"/>
+      </svg>
+
+      <!-- Wordmark — fades in after icon draws -->
+      <div class="splash__wordmark">
+        <span class="splash__word splash__word--d">DASTAN</span>
+        <span class="splash__word splash__word--sub">REAL ESTATE</span>
+      </div>
+    </div>
+
+    <!-- Light sweep across logo -->
+    <!-- <div class="splash__sweep"></div> -->
+  </div>
+
+
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
     <div class="container navbar__inner">

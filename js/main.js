@@ -9,6 +9,7 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
+    initSplash();
     initNavbar();
     initMobileMenu();
     initHeroSlider();
@@ -17,6 +18,35 @@
     initScrollReveal();
     initCounterAnimation();
     initSmoothScroll();
+  }
+
+  /* ==========================================
+     SPLASH SCREEN — orchestration + cleanup
+     Timeline: draw(0-2s) → fill(1.8s) → words(1.6-1.85s)
+               → sweep(2.2s) → exit(3s) → remove(3.6s)
+     ========================================== */
+  function initSplash() {
+    var splash = document.getElementById("splash");
+    if (!splash) return;
+
+    // Lock scroll during splash
+    document.body.classList.add("splash-active");
+
+    // At 3s: begin exit animation
+    setTimeout(function () {
+      splash.classList.add("splash--exit");
+    }, 3000);
+
+    // At 3.5s: fade the entire overlay out
+    setTimeout(function () {
+      splash.classList.add("splash--done");
+    }, 3500);
+
+    // At 4.1s: remove from DOM + unlock scroll
+    setTimeout(function () {
+      document.body.classList.remove("splash-active");
+      splash.remove();
+    }, 4100);
   }
 
   /* ==========================================
@@ -240,9 +270,7 @@
      ========================================== */
   function initCinemaReveal() {
     // Collect all paint elements
-    var allPaint = document.querySelectorAll(
-      '.cinema-reveal'
-    );
+    var allPaint = document.querySelectorAll(".cinema-reveal");
 
     if (!allPaint.length) return;
 
@@ -275,7 +303,7 @@
         // Clamp 0–100
         progress = Math.max(0, Math.min(100, progress));
 
-        el.style.setProperty('--paint', progress);
+        el.style.setProperty("--paint", progress);
       });
 
       rafId = requestAnimationFrame(updatePaint);
@@ -284,7 +312,7 @@
     var rafId = requestAnimationFrame(updatePaint);
 
     // Pause when tab is hidden for performance
-    document.addEventListener('visibilitychange', function () {
+    document.addEventListener("visibilitychange", function () {
       if (document.hidden) {
         cancelAnimationFrame(rafId);
       } else {
@@ -292,7 +320,6 @@
       }
     });
   }
-
 
   /* ==========================================
      SCROLL REVEAL — IntersectionObserver

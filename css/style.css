@@ -1521,6 +1521,154 @@ input, select, textarea { font-family: inherit; border: none; outline: none; }
 
 
 /* ============================================
+   SPLASH SCREEN
+   ============================================ */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s;
+}
+
+.splash--done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Background pattern — faint D-mark tiles */
+.splash__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/logo-pattern.png');
+  background-size: 140px auto;
+  background-repeat: repeat;
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+@keyframes splashGlowIn {
+  to { opacity: 1; }
+}
+
+/* Center container */
+.splash__center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
+}
+
+/* ---- D-mark SVG — stroke draw ---- */
+.splash__icon {
+  width: 140px;
+  height: auto;
+  overflow: visible;
+}
+
+.splash__path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Outer frame: longer path */
+.splash__path--1 {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: splashDraw 2s 0.2s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+             splashFillIn 0.8s 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Inner window: shorter path */
+.splash__path--2 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: splashDrawShort 1.4s 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+             splashFillIn 0.8s 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stroke drawing animation */
+@keyframes splashDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes splashDrawShort {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Fill fades in after stroke completes */
+@keyframes splashFillIn {
+  to {
+    fill: #0A1E77;
+    stroke: #0A1E77;
+  }
+}
+
+/* ---- Wordmark ---- */
+.splash__wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.splash__word {
+  display: block;
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.splash__word--d {
+  font-size: 3.25rem;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 12px;
+  animation: splashWordUp 0.8s 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.splash__word--sub {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 7px;
+  color: rgba(255, 255, 255, 0.5);
+  animation: splashWordUp 0.8s 1.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes splashWordUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Exit: whole splash fades + logo scales down ---- */
+.splash--exit .splash__center {
+  animation: splashExit 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes splashExit {
+  to {
+    opacity: 0;
+    transform: scale(0.85) translateY(-20px);
+  }
+}
+
+/* Lock body scroll while splash is visible */
+body.splash-active {
+  overflow: hidden;
+}
+
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
