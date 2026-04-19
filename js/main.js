@@ -14,6 +14,7 @@
     initMobileMenu();
     initHeroSlider();
     initSwipers();
+    initFilterBanner();
     initCinemaReveal();
     initScrollReveal();
     initCounterAnimation();
@@ -188,6 +189,10 @@
       navigation: {
         prevEl: "#projPrev",
         nextEl: "#projNext",
+      },
+      pagination: {
+        el: ".projects__pagination",
+        clickable: true,
       },
       autoplay: {
         delay: 4200,
@@ -435,6 +440,40 @@
 
       requestAnimationFrame(step);
     });
+  }
+
+  /* ==========================================
+     FILTER BANNER — Tab switching
+     ========================================== */
+  function initFilterBanner() {
+    var tabs = document.querySelectorAll(".filter-banner__tab");
+    var purposeSelect = document.getElementById("filterPurpose");
+    if (!tabs.length) return;
+
+    var purposeMap = { buy: "buy", rent: "rent", offplan: "offplan" };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) {
+          t.classList.remove("filter-banner__tab--active");
+          t.setAttribute("aria-selected", "false");
+        });
+        this.classList.add("filter-banner__tab--active");
+        this.setAttribute("aria-selected", "true");
+
+        var purpose = this.getAttribute("data-purpose");
+        if (purposeSelect && purposeMap[purpose]) {
+          purposeSelect.value = purposeMap[purpose];
+        }
+      });
+    });
+
+    var form = document.querySelector(".filter-banner__form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
+    }
   }
 
   /* ==========================================
