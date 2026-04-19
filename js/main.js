@@ -176,7 +176,7 @@
   function initSwipers() {
     // ---- Projects Slider ----
     // Homiva-style: grab cursor, horizontal scroll, peek next card
-    new Swiper("#projectsSwiper", {
+    var projectsSwiper = new Swiper("#projectsSwiper", {
       slidesPerView: 1,
       spaceBetween: 24,
       grabCursor: true,
@@ -212,7 +212,11 @@
         },
       },
     });
-
+    projectsSwiper.on("slideChangeTransitionEnd", function () {
+      if (projectsSwiper.isEnd) {
+        projectsSwiper.slideToLoop(0, 0, false);
+      }
+    });
     // ---- Properties Slider ----
     // Centered, cinematic card focus with fade-up active slide
     var propertiesSwiper = new Swiper("#propertiesSwiper", {
