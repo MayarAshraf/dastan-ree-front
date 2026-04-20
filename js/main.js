@@ -33,21 +33,21 @@
     // Lock scroll during splash
     document.body.classList.add("splash-active");
 
-    // At 3s: begin exit animation
+    // At 1.9s: begin exit animation (animations finish ~1.7s)
     setTimeout(function () {
       splash.classList.add("splash--exit");
-    }, 3000);
+    }, 1900);
 
-    // At 3.5s: fade the entire overlay out
+    // At 2.5s: fade the entire overlay out
     setTimeout(function () {
       splash.classList.add("splash--done");
-    }, 3500);
+    }, 2500);
 
-    // At 4.1s: remove from DOM + unlock scroll
+    // At 3.1s: remove from DOM + unlock scroll
     setTimeout(function () {
       document.body.classList.remove("splash-active");
       splash.remove();
-    }, 4100);
+    }, 2200);
   }
 
   /* ==========================================
