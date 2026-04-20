@@ -200,33 +200,6 @@
           <li><a href="#contact" class="navbar__link">Contact Us</a></li>
         </ul>
 
-        <!-- Language switch -->
-        <button
-          class="navbar__lang"
-          id="langToggle"
-          aria-label="Switch language"
-          data-lang="EN"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path d="M2 12h20" />
-            <path
-              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-            />
-          </svg>
-          <span class="navbar__lang-label">EN</span>
-        </button>
-
         <!-- Orange diagonal CTA group — diagonal matches hero -->
         <div class="navbar__cta-group">
           <a href="tel:+97140000000" class="navbar__phone">
@@ -248,23 +221,32 @@
             </span>
             <span class="navbar__phone-num">+971 4 000 0000</span>
           </a>
-          <a href="#contact" class="navbar__add">
+          <!-- Language switch -->
+          <button
+            class="navbar__lang"
+            id="langToggle"
+            aria-label="Switch language"
+            data-lang="EN"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.2"
+              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
             </svg>
-            ADD PROPERTY
-          </a>
+            <span class="navbar__lang-label">EN</span>
+          </button>
         </div>
 
         <button
@@ -648,12 +630,12 @@
                   aria-label="Select price range"
                 >
                   <option value="">Any Price</option>
-                  <option value="0-500k">Under AED 500K</option>
-                  <option value="500k-1m">AED 500K – 1M</option>
-                  <option value="1m-3m">AED 1M – 3M</option>
-                  <option value="3m-5m">AED 3M – 5M</option>
-                  <option value="5m-10m">AED 5M – 10M</option>
-                  <option value="10m+">AED 10M+</option>
+                  <option value="0-500k">Under EGP 500K</option>
+                  <option value="500k-1m">EGP 500K – 1M</option>
+                  <option value="1m-3m">EGP 1M – 3M</option>
+                  <option value="3m-5m">EGP 3M – 5M</option>
+                  <option value="5m-10m">EGP 5M – 10M</option>
+                  <option value="10m+">EGP 10M+</option>
                 </select>
                 <svg
                   class="filter-banner__chevron"
@@ -995,7 +977,7 @@
                       <span class="project-card__price-from"
                         >Starting from</span
                       >
-                      <span class="project-card__price-value">AED 1.8M</span>
+                      <span class="project-card__price-value">EGP 1.8M</span>
                     </div>
                     <a
                       href="#contact"
@@ -1059,7 +1041,7 @@
                       <span class="project-card__price-from"
                         >Starting from</span
                       >
-                      <span class="project-card__price-value">AED 6.2M</span>
+                      <span class="project-card__price-value">EGP 6.2M</span>
                     </div>
                     <a
                       href="#contact"
@@ -1123,7 +1105,7 @@
                       <span class="project-card__price-from"
                         >Starting from</span
                       >
-                      <span class="project-card__price-value">AED 1.2M</span>
+                      <span class="project-card__price-value">EGP 1.2M</span>
                     </div>
                     <a
                       href="#contact"
@@ -1187,7 +1169,7 @@
                       <span class="project-card__price-from"
                         >Starting from</span
                       >
-                      <span class="project-card__price-value">AED 750K</span>
+                      <span class="project-card__price-value">EGP 750K</span>
                     </div>
                     <a
                       href="#contact"
@@ -1251,7 +1233,7 @@
                       <span class="project-card__price-from"
                         >Starting from</span
                       >
-                      <span class="project-card__price-value">AED 3.8M</span>
+                      <span class="project-card__price-value">EGP 3.8M</span>
                     </div>
                     <a
                       href="#contact"
@@ -2083,20 +2065,7 @@
               <li><a href="#about" class="footer__link">About Us</a></li>
               <li><a href="#projects" class="footer__link">Projects</a></li>
               <li><a href="#properties" class="footer__link">Properties</a></li>
-              <li><a href="#" class="footer__link">Our Team</a></li>
-              <li><a href="#" class="footer__link">Testimonials</a></li>
               <li><a href="#contact" class="footer__link">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4 class="footer__heading">Services</h4>
-            <ul class="footer__links">
-              <li><a href="#" class="footer__link">Property Sales</a></li>
-              <li><a href="#" class="footer__link">Leasing</a></li>
-              <li><a href="#" class="footer__link">Property Management</a></li>
-              <li><a href="#" class="footer__link">Investment Advisory</a></li>
-              <li><a href="#" class="footer__link">Interior Design</a></li>
-              <li><a href="#" class="footer__link">Valuation</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -2160,12 +2129,13 @@
         </div>
         <div class="footer__bottom">
           <p class="footer__copy">
-            &copy; Copyright 2026. All Rights Reserved to <span>8WORX</span>
+            &copy; Copyright 2026. All Rights Reserved to
+            <span>
+              <a href="https://www.8worx.com" target="_blank">8WORX</a>
+            </span>
           </p>
           <div class="footer__bottom-links">
-            <a href="#" class="footer__bottom-link">Privacy Policy</a
-            ><a href="#" class="footer__bottom-link">Terms of Service</a
-            ><a href="#" class="footer__bottom-link">Cookie Policy</a>
+            <a href="#" class="footer__bottom-link">Privacy Policy</a>
           </div>
         </div>
       </div>
