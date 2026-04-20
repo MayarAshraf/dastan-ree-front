@@ -231,6 +231,38 @@
         propertiesSwiper.slideToLoop(0, 0, false);
       }
     });
+
+    // ---- Blogs Slider ----
+    var blogsSwiper = new Swiper("#blogsSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      grabCursor: true,
+      speed: 700,
+      loop: true,
+      navigation: {
+        prevEl: "#blogPrev",
+        nextEl: "#blogNext",
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+    });
+    blogsSwiper.on("slideChangeTransitionEnd", function () {
+      if (blogsSwiper.isEnd) {
+        blogsSwiper.slideToLoop(0, 0, false);
+      }
+    });
   }
 
   /* ==========================================
