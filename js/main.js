@@ -10,7 +10,6 @@
 
   function init() {
     initSplash();
-    initNavbar();
     initMobileMenu();
     initHeroSlider();
     initSwipers();
@@ -48,43 +47,6 @@
       document.body.classList.remove("splash-active");
       splash.remove();
     }, 2200);
-  }
-
-  /* ==========================================
-     NAVBAR — scroll shrink + active link
-     ========================================== */
-  function initNavbar() {
-    var navbar = document.getElementById("navbar");
-    var sections = document.querySelectorAll("section[id]");
-    var navLinks = document.querySelectorAll(".navbar__link");
-
-    function onScroll() {
-      if (window.scrollY > 50) {
-        navbar.classList.add("navbar--scrolled");
-      } else {
-        navbar.classList.remove("navbar--scrolled");
-      }
-
-      // Active link highlight
-      var scrollPos = window.scrollY + 200;
-      sections.forEach(function (section) {
-        var top = section.offsetTop;
-        var height = section.offsetHeight;
-        var id = section.getAttribute("id");
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          navLinks.forEach(function (link) {
-            link.classList.remove("navbar__link--active");
-            if (link.getAttribute("href") === "#" + id) {
-              link.classList.add("navbar__link--active");
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
   }
 
   /* ==========================================
