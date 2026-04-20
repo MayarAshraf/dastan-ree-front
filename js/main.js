@@ -57,25 +57,50 @@
     var menu = document.getElementById("navMenu");
     if (!toggle || !menu) return;
 
+    // Backdrop overlay
+    var backdrop = document.createElement("div");
+    backdrop.className = "nav-backdrop";
+    document.body.appendChild(backdrop);
+
+    // Close button injected at top of drawer
+    var closeBtn = document.createElement("button");
+    closeBtn.className = "navbar__menu-close";
+    closeBtn.setAttribute("aria-label", "Close menu");
+    closeBtn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    menu.insertBefore(closeBtn, menu.firstChild);
+
+    function openMenu() {
+      menu.classList.add("navbar__menu--open");
+      backdrop.classList.add("nav-backdrop--visible");
+      toggle.classList.add("navbar__toggle--active");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      menu.classList.remove("navbar__menu--open");
+      backdrop.classList.remove("nav-backdrop--visible");
+      toggle.classList.remove("navbar__toggle--active");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
     toggle.addEventListener("click", function () {
-      toggle.classList.toggle("navbar__toggle--active");
-      menu.classList.toggle("navbar__menu--open");
-      document.body.style.overflow = menu.classList.contains(
-        "navbar__menu--open",
-      )
-        ? "hidden"
-        : "";
+      menu.classList.contains("navbar__menu--open") ? closeMenu() : openMenu();
     });
 
-    menu
-      .querySelectorAll(".navbar__link, .navbar__cta")
-      .forEach(function (link) {
-        link.addEventListener("click", function () {
-          toggle.classList.remove("navbar__toggle--active");
-          menu.classList.remove("navbar__menu--open");
-          document.body.style.overflow = "";
-        });
-      });
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll(".navbar__link, .navbar__cta").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Fix freeze: clean up when resizing back to desktop
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) closeMenu();
+    });
   }
 
   /* ==========================================
