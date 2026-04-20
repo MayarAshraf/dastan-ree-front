@@ -1532,7 +1532,6 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 0.25rem 0.625rem 0.25rem 0.5rem;
   border-radius: var(--radius-full);
-  margin-bottom: 1rem;
 }
 
 .project-card__location svg {
