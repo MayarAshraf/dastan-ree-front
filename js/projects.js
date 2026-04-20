@@ -1066,28 +1066,6 @@
       });
     }
 
-    // View toggle
-    var viewGrid = document.getElementById("viewGrid");
-    var viewList = document.getElementById("viewList");
-    if (viewGrid && viewList) {
-      viewGrid.addEventListener("click", function () {
-        state.view = "grid";
-        viewGrid.classList.add("view-btn--active");
-        viewGrid.setAttribute("aria-pressed", "true");
-        viewList.classList.remove("view-btn--active");
-        viewList.setAttribute("aria-pressed", "false");
-        update();
-      });
-      viewList.addEventListener("click", function () {
-        state.view = "list";
-        viewList.classList.add("view-btn--active");
-        viewList.setAttribute("aria-pressed", "true");
-        viewGrid.classList.remove("view-btn--active");
-        viewGrid.setAttribute("aria-pressed", "false");
-        update();
-      });
-    }
-
     // Clear all
     var clearAll = document.getElementById("clearAllFilters");
     var emptyReset = document.getElementById("emptyResetBtn");
