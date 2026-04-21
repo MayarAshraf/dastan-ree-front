@@ -25,6 +25,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.min.css" />
 
     <!-- Favicon — brand mark on navy rounded square -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -492,6 +493,9 @@
 
     <!-- ========== PROPERTY FILTER BANNER ========== -->
     <section class="filter-banner" id="filter">
+      <div class="filter-banner__watermark" aria-hidden="true">
+        <img src="assets/logo-pattern.png" alt="" />
+      </div>
       <div class="container">
         <div class="filter-banner__inner">
           <!-- Buy / Rent / Off-Plan tabs -->
@@ -582,54 +586,13 @@
               </div>
             </div>
 
-            <div class="filter-banner__divider" aria-hidden="true"></div>
-
-            <!-- Purpose -->
-            <div class="filter-banner__field">
-              <label class="filter-banner__label" for="filterPurpose">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-                Purpose
-              </label>
-              <div class="filter-banner__select-wrap">
-                <select
-                  class="filter-banner__select"
-                  id="filterPurpose"
-                  aria-label="Select purpose"
-                >
-                  <option value="buy">For Sale</option>
-                  <option value="rent">For Rent</option>
-                  <option value="offplan">Off-Plan</option>
-                  <option value="commercial">Commercial</option>
-                </select>
-                <svg
-                  class="filter-banner__chevron"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </div>
-            </div>
+            <!-- Purpose — controlled by tabs, field hidden -->
+            <select id="filterPurpose" aria-label="Select purpose" style="display:none">
+              <option value="buy">For Sale</option>
+              <option value="rent">For Rent</option>
+              <option value="offplan">Off-Plan</option>
+              <option value="commercial">Commercial</option>
+            </select>
 
             <div class="filter-banner__divider" aria-hidden="true"></div>
 
@@ -2477,6 +2440,19 @@
 
     <!-- Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".filter-banner__select").forEach(function (el) {
+          new TomSelect(el, {
+            create: false,
+            allowEmptyOption: true,
+            dropdownParent: "body",
+            dropdownClass: "ts-dropdown filter-banner-ts-dropdown",
+          });
+        });
+      });
+    </script>
   </body>
 </html>
