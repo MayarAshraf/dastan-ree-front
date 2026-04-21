@@ -371,7 +371,7 @@ textarea {
 }
 
 .navbar--scrolled {
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: none;
 }
 
 .navbar__inner {

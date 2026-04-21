@@ -66,6 +66,7 @@
     initShareButton();
     initSimilarSwiper();
     initMasterplanLightbox();
+    initStickyBar();
   });
 
   /* ---- Gallery click → open lightbox ---- */
@@ -214,6 +215,56 @@
     btn.addEventListener("click", function () {
       openLightbox(GALLERY_IMAGES.length - 1);
     });
+  }
+
+  /* ---- Sticky Property Bar ---- */
+  function initStickyBar() {
+    var bar = document.getElementById("propStickyBar");
+    var trigger = document.querySelector(".prop-header");
+    var progress = document.getElementById("stickyProgress");
+    var stickyShareBtn = document.getElementById("stickyShareBtn");
+    var stickySaveBtn = document.getElementById("stickySaveBtn");
+    var mainSaveBtn = document.getElementById("saveBtn");
+
+    if (!bar || !trigger) return;
+
+    function onScroll() {
+      var rect = trigger.getBoundingClientRect();
+      var visible = rect.bottom < 70;
+
+      if (visible) {
+        bar.classList.add("is-visible");
+        bar.removeAttribute("aria-hidden");
+      } else {
+        bar.classList.remove("is-visible");
+        bar.setAttribute("aria-hidden", "true");
+      }
+
+      if (progress) {
+        var scrolled = window.scrollY || document.documentElement.scrollTop;
+        var total = document.body.scrollHeight - window.innerHeight;
+        var pct = total > 0 ? Math.min((scrolled / total) * 100, 100) : 0;
+        progress.style.width = pct + "%";
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    if (stickyShareBtn) {
+      stickyShareBtn.addEventListener("click", function () {
+        var mainShare = document.getElementById("shareBtn");
+        if (mainShare) mainShare.click();
+      });
+    }
+
+    if (stickySaveBtn && mainSaveBtn) {
+      stickySaveBtn.addEventListener("click", function () {
+        mainSaveBtn.click();
+      });
+      mainSaveBtn.addEventListener("click", function () {
+        stickySaveBtn.classList.toggle("saved", mainSaveBtn.classList.contains("saved"));
+      });
+    }
   }
 
   /* ---- Similar Properties Swiper ---- */
