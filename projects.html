@@ -21,7 +21,10 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/projects.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.min.css"
+    />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   </head>
   <body class="projects-body">
@@ -140,9 +143,6 @@
               fill="currentColor"
             />
           </svg>
-          <div class="navbar__logo-watermark" aria-hidden="true">
-            <img src="assets/logo-pattern.png" alt="" />
-          </div>
         </a>
 
         <ul class="navbar__menu" id="navMenu">
@@ -366,7 +366,11 @@
             </div>
 
             <!-- Purpose — controlled by tabs, field hidden -->
-            <select id="filterPurpose" aria-label="Select purpose" style="display:none">
+            <select
+              id="filterPurpose"
+              aria-label="Select purpose"
+              style="display: none"
+            >
               <option value="buy">For Sale</option>
               <option value="rent">For Rent</option>
               <option value="offplan">Off-Plan</option>
@@ -1527,14 +1531,16 @@
     <script src="js/projects.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".filter-banner__select").forEach(function (el) {
-          new TomSelect(el, {
-            create: false,
-            allowEmptyOption: true,
-            dropdownParent: "body",
-            dropdownClass: "ts-dropdown filter-banner-ts-dropdown",
+        document
+          .querySelectorAll(".filter-banner__select")
+          .forEach(function (el) {
+            new TomSelect(el, {
+              create: false,
+              allowEmptyOption: true,
+              dropdownParent: "body",
+              dropdownClass: "ts-dropdown filter-banner-ts-dropdown",
+            });
           });
-        });
       });
     </script>
   </body>

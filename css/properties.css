@@ -80,14 +80,15 @@
   color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
   transition: color var(--transition-fast);
+  cursor: pointer;
 }
 
 .page-header__crumb:hover {
-  color: var(--color-accent-light);
+  color: var(--color-white);
 }
 
 .page-header__crumb--active {
-  color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .page-header__title {
@@ -124,7 +125,7 @@
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: var(--fw-extrabold);
-  color: var(--color-accent);
+  color: var(--color-white);
   line-height: 1;
 }
 
