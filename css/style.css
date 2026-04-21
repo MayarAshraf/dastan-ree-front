@@ -59,10 +59,10 @@
 
   /* Layout */
   --container-max: 1400px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
   --radius-full: 9999px;
 
   /* Shadows */
@@ -276,7 +276,7 @@ textarea {
   font-weight: var(--fw-semibold);
   font-size: 0.9375rem;
   padding: 0.875rem 2rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
@@ -1831,9 +1831,11 @@ textarea {
 /* Property Card */
 .property-card {
   background: var(--color-white);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.26);
+  display: flex;
+  flex-direction: column;
   transition:
     transform 0.55s var(--ease-out),
     box-shadow 0.55s var(--ease-out),
@@ -1916,6 +1918,9 @@ textarea {
 
 .property-card__body {
   padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .property-card__price {
@@ -3064,7 +3069,17 @@ body.splash-active {
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+#blogsSwiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+#blogsSwiper .swiper-slide {
+  height: auto;
+  display: flex;
 }
 
 .blog-card__img-wrap {
@@ -3164,7 +3179,6 @@ body.splash-active {
   color: var(--color-dark-gray);
   line-height: 1.65;
   margin: 0;
-  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
