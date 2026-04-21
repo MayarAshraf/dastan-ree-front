@@ -1084,7 +1084,7 @@
       });
     }
 
-    // Price + area range inputs
+    // Price + area range inputs (sidebar)
     ["priceMin", "priceMax", "areaMin", "areaMax"].forEach(function (id) {
       var input = document.getElementById(id);
       if (!input) return;
@@ -1093,6 +1093,21 @@
         clearTimeout(timer);
         timer = setTimeout(function () {
           state[id] = input.value.trim();
+          state.page = 1;
+          update();
+        }, 400);
+      });
+    });
+
+    // Banner price inputs (map to same state keys)
+    [["bannerPriceMin", "priceMin"], ["bannerPriceMax", "priceMax"]].forEach(function (pair) {
+      var input = document.getElementById(pair[0]);
+      if (!input) return;
+      var timer;
+      input.addEventListener("input", function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          state[pair[1]] = input.value.trim();
           state.page = 1;
           update();
         }, 400);
@@ -1203,7 +1218,7 @@
       document.querySelectorAll(".filter-tag--active").forEach(function (t) {
         t.classList.remove("filter-tag--active");
       });
-      ["priceMin", "priceMax", "areaMin", "areaMax"].forEach(function (id) {
+      ["priceMin", "priceMax", "areaMin", "areaMax", "bannerPriceMin", "bannerPriceMax"].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.value = "";
       });

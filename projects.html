@@ -429,8 +429,8 @@
             <div class="filter-banner__divider" aria-hidden="true"></div>
 
             <!-- Price Range -->
-            <div class="filter-banner__field">
-              <label class="filter-banner__label" for="filterPrice">
+            <div class="filter-banner__field filter-banner__field--price">
+              <label class="filter-banner__label" for="bannerPriceMin">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="13"
@@ -447,34 +447,24 @@
                 </svg>
                 Price Range
               </label>
-              <div class="filter-banner__select-wrap">
-                <select
-                  class="filter-banner__select"
-                  id="filterPrice"
-                  aria-label="Select price range"
-                >
-                  <option value="">Any Price</option>
-                  <option value="0-500k">Under EGP 500K</option>
-                  <option value="500k-1m">EGP 500K – 1M</option>
-                  <option value="1m-3m">EGP 1M – 3M</option>
-                  <option value="3m-5m">EGP 3M – 5M</option>
-                  <option value="5m-10m">EGP 5M – 10M</option>
-                  <option value="10m+">EGP 10M+</option>
-                </select>
-                <svg
-                  class="filter-banner__chevron"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+              <div class="filter-banner__price-wrap">
+                <input
+                  type="number"
+                  class="filter-banner__price-input"
+                  id="bannerPriceMin"
+                  placeholder="Min"
+                  min="0"
+                  aria-label="Minimum price"
+                />
+                <span class="filter-banner__price-sep">–</span>
+                <input
+                  type="number"
+                  class="filter-banner__price-input"
+                  id="bannerPriceMax"
+                  placeholder="Max"
+                  min="0"
+                  aria-label="Maximum price"
+                />
               </div>
             </div>
 
