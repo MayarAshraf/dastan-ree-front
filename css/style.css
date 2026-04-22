@@ -1431,6 +1431,128 @@ textarea {
 }
 
 /* ============================================
+   ABOUT — D-Mark Animation Scene
+   ============================================ */
+.about__mark-scene {
+  position: relative;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: visible;
+}
+
+.about__mark-glow {
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(
+    ellipse 80% 70% at 60% 45%,
+    rgba(10, 30, 119, 0.09) 0%,
+    rgba(232, 115, 74, 0.05) 55%,
+    transparent 78%
+  );
+  pointer-events: none;
+  filter: blur(24px);
+}
+
+.about__mark-3d {
+  position: relative;
+  width: 224px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.about__mark-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 22px 48px rgba(10, 30, 119, 0.22));
+}
+
+/* Floating accent particles */
+.about__mark-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.about__mark-particle--1 {
+  width: 8px;
+  height: 8px;
+  top: 10%;
+  right: -20px;
+  background: var(--color-accent);
+}
+.about__mark-particle--2 {
+  width: 5px;
+  height: 5px;
+  top: 42%;
+  left: -18px;
+  background: var(--color-primary);
+}
+.about__mark-particle--3 {
+  width: 7px;
+  height: 7px;
+  bottom: 16%;
+  right: -24px;
+  background: var(--color-accent);
+}
+.about__mark-particle--4 {
+  width: 4px;
+  height: 4px;
+  top: 26%;
+  right: -36px;
+  background: var(--color-primary);
+  opacity: 0.6;
+}
+
+/* Experience badge — floats bottom-right of the mark */
+.about__mark-badge {
+  position: absolute;
+  bottom: 20px;
+  right: -88px;
+  background: var(--color-white);
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(10, 30, 119, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+.about__mark-badge-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: #eef1fb;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+.about__mark-badge-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.about__mark-badge-num {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  line-height: 1.1;
+}
+.about__mark-badge-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
    PROJECTS SLIDER — Card without bg image
    ============================================ */
 .projects {
@@ -2784,6 +2906,16 @@ body.splash-active {
     height: 350px;
     max-width: 480px;
   }
+  .about__mark-scene {
+    height: 350px;
+    max-width: 480px;
+  }
+  .about__mark-3d {
+    width: 185px;
+  }
+  .about__mark-badge {
+    right: -70px;
+  }
   .about__content {
     padding-left: 0;
   }
@@ -2928,6 +3060,19 @@ body.splash-active {
   .about__images {
     height: 280px;
   }
+  .about__mark-scene {
+    height: 280px;
+  }
+  .about__mark-3d {
+    width: 150px;
+  }
+  .about__mark-badge {
+    right: -60px;
+    padding: 0.5rem 0.7rem;
+  }
+  .about__mark-badge-num {
+    font-size: 0.9375rem;
+  }
   .about__features {
     grid-template-columns: 1fr;
   }
@@ -2999,6 +3144,15 @@ body.splash-active {
   }
   .about__images {
     height: 220px;
+  }
+  .about__mark-scene {
+    height: 250px;
+  }
+  .about__mark-3d {
+    width: 132px;
+  }
+  .about__mark-badge {
+    display: none;
   }
   .footer__watermark {
     width: 160px;
