@@ -96,6 +96,7 @@
     initScrollReveal();
     initCounterAnimation();
     initSmoothScroll();
+    initAboutMarkAnimation();
   }
 
   /* ==========================================
@@ -600,6 +601,191 @@
         var top =
           target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: "smooth" });
+      });
+    });
+  }
+
+  /* ==========================================
+     ABOUT — D-Mark Build Animation (GSAP)
+     Timeline:
+       0.0s  origin spark pulses
+       0.2s  outer path strokes itself on
+       1.0s  inner window strokes in
+       2.0s  navy fill floods in, strokes fade
+       2.4s  real-estate photo fades up in window
+       2.7s  accent particles burst in
+       3.2s  whole mark tilts to 3-D perspective
+       3.6s  experience badge slides up
+       4.5s  continuous float + mouse parallax
+     ========================================== */
+  function initAboutMarkAnimation() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+    var scene = document.getElementById("aboutMarkScene");
+    if (!scene) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    var outerStroke = document.getElementById("dMarkOuterStroke");
+    var innerStroke = document.getElementById("dMarkInnerStroke");
+    var fillPath    = document.getElementById("dMarkFill");
+    var photo       = document.getElementById("dMarkPhoto");
+    var badge       = document.getElementById("aboutMarkBadge");
+    var mark3d      = document.getElementById("aboutMark3d");
+    var originDot   = document.getElementById("dMarkOrigin");
+    var particles   = scene.querySelectorAll(".about__mark-particle");
+
+    if (!outerStroke || !innerStroke || !fillPath || !photo) return;
+
+    /* ---- respect prefers-reduced-motion ---- */
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(fillPath, { opacity: 1 });
+      gsap.set(photo,    { opacity: 1 });
+      if (badge)     gsap.set(badge, { opacity: 1, y: 0 });
+      if (particles) gsap.set(particles, { opacity: 1, scale: 1 });
+      gsap.set(mark3d, { rotateY: -8, rotateX: 3 });
+      return;
+    }
+
+    /* ---- measure actual path lengths ---- */
+    var outerLen = outerStroke.getTotalLength();
+    var innerLen = innerStroke.getTotalLength();
+
+    /* ---- set initial hidden states ---- */
+    gsap.set(outerStroke, { strokeDasharray: outerLen, strokeDashoffset: outerLen });
+    gsap.set(innerStroke, { strokeDasharray: innerLen, strokeDashoffset: innerLen });
+    gsap.set(fillPath,    { opacity: 0 });
+    gsap.set(photo,       { opacity: 0 });
+    gsap.set(particles,   { opacity: 0, scale: 0 });
+    gsap.set(originDot,   { opacity: 0, scale: 0, transformOrigin: "99.7px 55.09px" });
+    if (badge) gsap.set(badge, { opacity: 0, y: 22 });
+
+    /* ---- main timeline ---- */
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: scene,
+        start: "top 65%",
+        once: true
+      }
+    });
+
+    /* Phase 1 — origin spark */
+    tl.to(originDot, { opacity: 1, scale: 2.4, duration: 0.25, ease: "power2.out" }, 0)
+      .to(originDot, { opacity: 0, scale: 0.4, duration: 0.30, ease: "power2.in"  }, 0.28);
+
+    /* Phase 2 — draw outer path (0.2 → 2.4 s) */
+    tl.to(outerStroke, {
+      strokeDashoffset: 0,
+      duration: 2.2,
+      ease: "power2.inOut"
+    }, 0.2);
+
+    /* Phase 3 — draw inner window (1.0 → 2.0 s) */
+    tl.to(innerStroke, {
+      strokeDashoffset: 0,
+      duration: 1.0,
+      ease: "power2.out"
+    }, 1.0);
+
+    /* Phase 4 — flood fill (2.0 → 2.9 s) */
+    tl.to(fillPath, {
+      opacity: 1,
+      duration: 0.9,
+      ease: "power2.inOut"
+    }, 2.0);
+
+    /* strokes fade out as fill arrives (2.1 → 2.7 s) */
+    tl.to([outerStroke, innerStroke], {
+      opacity: 0,
+      duration: 0.6,
+      ease: "power1.in"
+    }, 2.1);
+
+    /* Phase 5 — photo emerges from the window (2.4 → 3.8 s) */
+    tl.to(photo, {
+      opacity: 1,
+      duration: 1.4,
+      ease: "power2.out"
+    }, 2.4);
+
+    /* Phase 6 — particles burst (2.7 → 3.1 s) */
+    tl.to(particles, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.4,
+      stagger: 0.09,
+      ease: "back.out(2.5)"
+    }, 2.7);
+
+    /* Phase 7 — 3-D tilt (3.2 → 4.4 s) */
+    tl.to(mark3d, {
+      rotateY: -8,
+      rotateX: 3,
+      duration: 1.2,
+      ease: "power3.out"
+    }, 3.2);
+
+    /* Phase 8 — badge slides up (3.6 → 4.2 s) */
+    if (badge) {
+      tl.to(badge, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, 3.6);
+    }
+
+    /* Phase 9 — continuous float + particle drift (after 4.5 s) */
+    tl.call(function () {
+      gsap.to(mark3d, {
+        y: -9,
+        duration: 2.6,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true
+      });
+
+      var pNodes = [].slice.call(particles);
+      var motions = [
+        { y: -13, x:  5, dur: 3.0, delay: 0.0 },
+        { y:  11, x: -6, dur: 2.4, delay: 0.5 },
+        { y:  -9, x:  4, dur: 2.8, delay: 0.9 },
+        { y:   7, x: -3, dur: 2.1, delay: 0.3 }
+      ];
+      pNodes.forEach(function (p, i) {
+        var m = motions[i] || motions[0];
+        gsap.to(p, {
+          y: m.y, x: m.x,
+          duration: m.dur,
+          delay: m.delay,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true
+        });
+      });
+    }, null, 4.5);
+
+    /* ---- mouse parallax ---- */
+    scene.addEventListener("mousemove", function (e) {
+      var r  = scene.getBoundingClientRect();
+      var cx = (e.clientX - r.left) / r.width  - 0.5;
+      var cy = (e.clientY - r.top)  / r.height - 0.5;
+      gsap.to(mark3d, {
+        rotateY: -8 + cx * 14,
+        rotateX:  3 - cy * 10,
+        duration: 0.5,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
+    });
+
+    scene.addEventListener("mouseleave", function () {
+      gsap.to(mark3d, {
+        rotateY: -8,
+        rotateX:  3,
+        duration: 1.2,
+        ease: "power3.out",
+        overwrite: "auto"
       });
     });
   }
