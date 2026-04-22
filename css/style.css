@@ -1467,7 +1467,6 @@ textarea {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 22px 48px rgba(10, 30, 119, 0.22));
 }
 
 /* Floating accent particles */
