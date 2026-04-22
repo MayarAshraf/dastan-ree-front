@@ -12,10 +12,10 @@
   var PROJECTS = [
     {
       id: 1,
-      title: "Marina Heights",
+      title: "Nile Heights",
       developer: "emaar",
-      developerLabel: "Emaar Properties",
-      location: "Dubai Marina",
+      developerLabel: "Talaat Moustafa Group",
+      location: "New Cairo",
       image:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       priceRaw: 1800000,
@@ -33,10 +33,10 @@
     },
     {
       id: 2,
-      title: "Palm Signature Villas",
+      title: "Sahel Signature Villas",
       developer: "nakheel",
-      developerLabel: "Nakheel",
-      location: "Palm Jumeirah",
+      developerLabel: "Palm Hills",
+      location: "New Alamein Coast",
       image:
         "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
       priceRaw: 6200000,
@@ -56,8 +56,8 @@
       id: 3,
       title: "Downtown Residences",
       developer: "meraas",
-      developerLabel: "Meraas",
-      location: "Downtown Dubai",
+      developerLabel: "Misr Italia",
+      location: "Downtown Cairo",
       image:
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
       priceRaw: 1200000,
@@ -75,10 +75,10 @@
     },
     {
       id: 4,
-      title: "Business Bay Towers",
+      title: "New Administrative Capital Towers",
       developer: "damac",
-      developerLabel: "DAMAC Properties",
-      location: "Business Bay",
+      developerLabel: "Hassan Allam Properties",
+      location: "New Administrative Capital",
       image:
         "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800&q=80",
       priceRaw: 750000,
@@ -98,8 +98,8 @@
       id: 5,
       title: "Hills Estate Villas",
       developer: "emaar",
-      developerLabel: "Emaar Properties",
-      location: "Dubai Hills Estate",
+      developerLabel: "Talaat Moustafa Group",
+      location: "Mostakbal City",
       image:
         "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
       priceRaw: 3800000,
@@ -117,10 +117,10 @@
     },
     {
       id: 6,
-      title: "Creek Harbour Suites",
+      title: "Nile View Suites",
       developer: "emaar",
-      developerLabel: "Emaar Properties",
-      location: "Dubai Creek Harbour",
+      developerLabel: "Talaat Moustafa Group",
+      location: "Nile Corniche District",
       image:
         "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
       priceRaw: 2100000,
@@ -138,10 +138,10 @@
     },
     {
       id: 7,
-      title: "JVC Luxury Residences",
+      title: "Zayed District Residences",
       developer: "damac",
-      developerLabel: "DAMAC Properties",
-      location: "Jumeirah Village Circle",
+      developerLabel: "Hassan Allam Properties",
+      location: "Mehwar Road District",
       image:
         "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
       priceRaw: 650000,
@@ -159,10 +159,10 @@
     },
     {
       id: 8,
-      title: "Arabian Ranches III",
+      title: "West Cairo Gardens III",
       developer: "emaar",
-      developerLabel: "Emaar Properties",
-      location: "Arabian Ranches",
+      developerLabel: "Talaat Moustafa Group",
+      location: "West Cairo Gardens",
       image:
         "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=800&q=80",
       priceRaw: 2800000,
@@ -180,10 +180,10 @@
     },
     {
       id: 9,
-      title: "DIFC Living",
+      title: "Smart Village Living",
       developer: "meraas",
-      developerLabel: "Meraas",
-      location: "DIFC",
+      developerLabel: "Misr Italia",
+      location: "Smart Village",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
       priceRaw: 4500000,
@@ -201,10 +201,10 @@
     },
     {
       id: 10,
-      title: "Meydan Heights",
+      title: "New Capital Heights",
       developer: "azizi",
-      developerLabel: "Azizi Developments",
-      location: "Meydan City",
+      developerLabel: "Ora Developers",
+      location: "New Capital District",
       image:
         "https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=800&q=80",
       priceRaw: 1100000,
@@ -222,10 +222,10 @@
     },
     {
       id: 11,
-      title: "Emaar South Residences",
+      title: "6th of October Residences",
       developer: "emaar",
-      developerLabel: "Emaar Properties",
-      location: "Emaar South",
+      developerLabel: "Talaat Moustafa Group",
+      location: "6th of October",
       image:
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
       priceRaw: 890000,
@@ -243,10 +243,10 @@
     },
     {
       id: 12,
-      title: "Damac Hills Golf Villas",
+      title: "Katameya Heights Golf Villas",
       developer: "damac",
-      developerLabel: "DAMAC Properties",
-      location: "Damac Hills",
+      developerLabel: "Hassan Allam Properties",
+      location: "Katameya Heights",
       image:
         "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
       priceRaw: 5300000,
@@ -264,10 +264,10 @@
     },
     {
       id: 13,
-      title: "Al Barsha Premium",
+      title: "Maadi Premium",
       developer: "nakheel",
-      developerLabel: "Nakheel",
-      location: "Al Barsha",
+      developerLabel: "Palm Hills",
+      location: "Maadi",
       image:
         "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80",
       priceRaw: 480000,
@@ -285,10 +285,10 @@
     },
     {
       id: 14,
-      title: "Bluewaters Residences",
+      title: "Ain Sokhna Residences",
       developer: "meraas",
-      developerLabel: "Meraas",
-      location: "Bluewaters Island",
+      developerLabel: "Misr Italia",
+      location: "Ain Sokhna Waterfront",
       image:
         "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=800&q=80",
       priceRaw: 7800000,
@@ -308,8 +308,8 @@
       id: 15,
       title: "Sports City Residences",
       developer: "select",
-      developerLabel: "Select Group",
-      location: "Dubai Sports City",
+      developerLabel: "City Edge",
+      location: "Nasr City Sports District",
       image:
         "https://images.unsplash.com/photo-1574691250077-03a929faece5?w=800&q=80",
       priceRaw: 590000,
@@ -327,10 +327,10 @@
     },
     {
       id: 16,
-      title: "Sobha Hartland II",
+      title: "West Cairo Park II",
       developer: "sobha",
-      developerLabel: "Sobha Realty",
-      location: "MBR City",
+      developerLabel: "SODIC",
+      location: "New Administrative Capital",
       image:
         "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80",
       priceRaw: 3200000,
@@ -348,10 +348,10 @@
     },
     {
       id: 17,
-      title: "Ellington Cove",
+      title: "Mediterranean Cove",
       developer: "ellington",
-      developerLabel: "Ellington Properties",
-      location: "Dubai Islands",
+      developerLabel: "Mountain View",
+      location: "Ain Sokhna Waterfront",
       image:
         "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=800&q=80",
       priceRaw: 2600000,
@@ -369,10 +369,10 @@
     },
     {
       id: 18,
-      title: "Azizi Riviera",
+      title: "Nile Riviera",
       developer: "azizi",
-      developerLabel: "Azizi Developments",
-      location: "MBR City",
+      developerLabel: "Ora Developers",
+      location: "New Administrative Capital",
       image:
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
       priceRaw: 780000,
@@ -427,15 +427,15 @@
     },
     baths: { 1: "1 Bath", 2: "2 Baths", 3: "3 Baths", 4: "4+ Baths" },
     developer: {
-      emaar: "Emaar",
-      damac: "DAMAC",
-      nakheel: "Nakheel",
-      meraas: "Meraas",
-      sobha: "Sobha",
-      azizi: "Azizi",
-      ellington: "Ellington",
-      select: "Select Group",
-      nshama: "Nshama",
+      emaar: "TMG",
+      damac: "Hassan Allam",
+      nakheel: "Palm Hills",
+      meraas: "Misr Italia",
+      sobha: "SODIC",
+      azizi: "Ora",
+      ellington: "Mountain View",
+      select: "City Edge",
+      nshama: "Hyde Park Developments",
     },
     completion: {
       2024: "By 2024",

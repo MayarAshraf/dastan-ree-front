@@ -8,7 +8,7 @@
   var GALLERY_IMAGES = [
     {
       src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80",
-      caption: "Marina Gate — Exterior View",
+      caption: "Nile Gate — Exterior View",
     },
     {
       src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
@@ -48,7 +48,7 @@
     },
     {
       src: "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1400&q=80",
-      caption: "Marina Skyline at Night",
+      caption: "Nile Skyline at Night",
     },
     {
       src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400&q=80",
@@ -194,7 +194,7 @@
     btn.addEventListener("click", function () {
       if (navigator.share) {
         navigator.share({
-          title: "Marina Gate — 2BR Apartment | Dastan Real Estate",
+          title: "Nile Gate — 2BR Apartment | Dastan Real Estate Egypt",
           url: window.location.href,
         }).catch(function () {});
       } else {

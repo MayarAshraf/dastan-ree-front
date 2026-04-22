@@ -12,12 +12,12 @@
   var PROPERTIES = [
     {
       id: 1,
-      title: "Marina Gate — 2BR Apartment",
+      title: "Nile Gate — 2BR Apartment",
       type: "apartment",
       purpose: "sale",
-      location: "Dubai Marina",
+      location: "New Cairo",
       community: "marina",
-      communityLabel: "Dubai Marina",
+      communityLabel: "New Cairo",
       image:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       priceRaw: 1800000,
@@ -34,12 +34,12 @@
     },
     {
       id: 2,
-      title: "Palm Jumeirah Beachfront Villa",
+      title: "New Alamein Coast Beachfront Villa",
       type: "villa",
       purpose: "sale",
-      location: "Palm Jumeirah",
+      location: "New Alamein Coast",
       community: "palm",
-      communityLabel: "Palm Jumeirah",
+      communityLabel: "New Alamein Coast",
       image:
         "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
       priceRaw: 6200000,
@@ -59,9 +59,9 @@
       title: "Furnished Studio — Downtown",
       type: "studio",
       purpose: "rent",
-      location: "Downtown Dubai",
+      location: "Downtown Cairo",
       community: "downtown",
-      communityLabel: "Downtown Dubai",
+      communityLabel: "Downtown Cairo",
       image:
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
       priceRaw: 120000,
@@ -78,12 +78,12 @@
     },
     {
       id: 4,
-      title: "Modern 1BR — Business Bay",
+      title: "Modern 1BR — New Administrative Capital",
       type: "apartment",
       purpose: "rent",
-      location: "Business Bay",
+      location: "New Administrative Capital",
       community: "business-bay",
-      communityLabel: "Business Bay",
+      communityLabel: "New Administrative Capital",
       image:
         "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800&q=80",
       priceRaw: 95000,
@@ -103,9 +103,9 @@
       title: "Golf-Front 4BR Villa",
       type: "villa",
       purpose: "sale",
-      location: "Dubai Hills Estate",
+      location: "Mostakbal City",
       community: "hills",
-      communityLabel: "Dubai Hills",
+      communityLabel: "Cairo Hills",
       image:
         "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
       priceRaw: 3800000,
@@ -122,12 +122,12 @@
     },
     {
       id: 6,
-      title: "Creek View 2BR — Creek Harbour",
+      title: "Creek View 2BR — Nile Corniche",
       type: "apartment",
       purpose: "sale",
-      location: "Dubai Creek Harbour",
+      location: "Nile Corniche District",
       community: "creek",
-      communityLabel: "Creek Harbour",
+      communityLabel: "Nile Corniche",
       image:
         "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
       priceRaw: 2100000,
@@ -144,12 +144,12 @@
     },
     {
       id: 7,
-      title: "Bright 1BR Apartment — JVC",
+      title: "Bright 1BR Apartment — Zayed District",
       type: "apartment",
       purpose: "sale",
-      location: "Jumeirah Village Circle",
+      location: "Mehwar Road District",
       community: "jvc",
-      communityLabel: "JVC & Sports City",
+      communityLabel: "Zayed District & Sports City",
       image:
         "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
       priceRaw: 650000,
@@ -169,9 +169,9 @@
       title: "Spacious 3BR Townhouse",
       type: "townhouse",
       purpose: "sale",
-      location: "Arabian Ranches",
+      location: "West Cairo Gardens",
       community: "arabian-ranches",
-      communityLabel: "Arabian Ranches",
+      communityLabel: "West Cairo Gardens",
       image:
         "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=800&q=80",
       priceRaw: 2800000,
@@ -188,12 +188,12 @@
     },
     {
       id: 9,
-      title: "DIFC Penthouse Duplex",
+      title: "Smart Village Penthouse Duplex",
       type: "penthouse",
       purpose: "sale",
-      location: "DIFC",
+      location: "Smart Village",
       community: "difc",
-      communityLabel: "DIFC",
+      communityLabel: "Smart Village",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
       priceRaw: 4500000,
@@ -210,12 +210,12 @@
     },
     {
       id: 10,
-      title: "2BR Garden View — Dubai Hills",
+      title: "2BR Garden View — Cairo Hills",
       type: "apartment",
       purpose: "rent",
-      location: "Dubai Hills Estate",
+      location: "Mostakbal City",
       community: "hills",
-      communityLabel: "Dubai Hills",
+      communityLabel: "Cairo Hills",
       image:
         "https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=800&q=80",
       priceRaw: 150000,
@@ -232,12 +232,12 @@
     },
     {
       id: 11,
-      title: "Affordable 2BR — Emaar South",
+      title: "Affordable 2BR — 6th of October",
       type: "apartment",
       purpose: "sale",
-      location: "Emaar South",
+      location: "6th of October",
       community: "arabian-ranches",
-      communityLabel: "Arabian Ranches",
+      communityLabel: "West Cairo Gardens",
       image:
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
       priceRaw: 890000,
@@ -257,9 +257,9 @@
       title: "Premium 5BR Golf Villa",
       type: "villa",
       purpose: "sale",
-      location: "DAMAC Hills",
+      location: "Katameya Heights",
       community: "hills",
-      communityLabel: "Dubai Hills",
+      communityLabel: "Cairo Hills",
       image:
         "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
       priceRaw: 5300000,
@@ -276,12 +276,12 @@
     },
     {
       id: 13,
-      title: "Cozy Studio — Al Barsha",
+      title: "Cozy Studio — Maadi",
       type: "studio",
       purpose: "rent",
-      location: "Al Barsha",
+      location: "Maadi",
       community: "marina",
-      communityLabel: "Dubai Marina & JBR",
+      communityLabel: "New Cairo & North Coast",
       image:
         "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80",
       priceRaw: 60000,
@@ -298,12 +298,12 @@
     },
     {
       id: 14,
-      title: "Bluewaters 4BR Penthouse",
+      title: "Ain Sokhna 4BR Penthouse",
       type: "penthouse",
       purpose: "sale",
-      location: "Bluewaters Island",
+      location: "Ain Sokhna Waterfront",
       community: "marina",
-      communityLabel: "Dubai Marina & JBR",
+      communityLabel: "New Cairo & North Coast",
       image:
         "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=800&q=80",
       priceRaw: 7800000,
@@ -320,12 +320,12 @@
     },
     {
       id: 15,
-      title: "JBR Beachfront 2BR",
+      title: "North Coast Beachfront 2BR",
       type: "apartment",
       purpose: "sale",
-      location: "JBR",
+      location: "North Coast",
       community: "marina",
-      communityLabel: "Dubai Marina & JBR",
+      communityLabel: "New Cairo & North Coast",
       image:
         "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
       priceRaw: 2400000,
@@ -345,9 +345,9 @@
       title: "Hartland 3BR Apartment",
       type: "apartment",
       purpose: "sale",
-      location: "Sobha Hartland",
+      location: "West Cairo Park",
       community: "creek",
-      communityLabel: "Creek Harbour",
+      communityLabel: "Nile Corniche",
       image:
         "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&q=80",
       priceRaw: 3100000,
@@ -364,12 +364,12 @@
     },
     {
       id: 17,
-      title: "Premium 4BR Jumeirah Villa",
+      title: "Premium 4BR Zamalek Villa",
       type: "villa",
       purpose: "rent",
-      location: "Jumeirah",
+      location: "Zamalek",
       community: "marina",
-      communityLabel: "Dubai Marina & JBR",
+      communityLabel: "New Cairo & North Coast",
       image:
         "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
       priceRaw: 350000,
@@ -391,7 +391,7 @@
       purpose: "sale",
       location: "Sports City",
       community: "jvc",
-      communityLabel: "JVC & Sports City",
+      communityLabel: "Zayed District & Sports City",
       image:
         "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800&q=80",
       priceRaw: 450000,
@@ -408,12 +408,12 @@
     },
     {
       id: 19,
-      title: "Palm Jumeirah Townhouse",
+      title: "New Alamein Coast Townhouse",
       type: "townhouse",
       purpose: "sale",
-      location: "Palm Jumeirah",
+      location: "New Alamein Coast",
       community: "palm",
-      communityLabel: "Palm Jumeirah",
+      communityLabel: "New Alamein Coast",
       image:
         "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80",
       priceRaw: 4800000,
@@ -433,9 +433,9 @@
       title: "Downtown Sky-Level Penthouse",
       type: "penthouse",
       purpose: "sale",
-      location: "Downtown Dubai",
+      location: "Downtown Cairo",
       community: "downtown",
-      communityLabel: "Downtown Dubai",
+      communityLabel: "Downtown Cairo",
       image:
         "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
       priceRaw: 9500000,
@@ -493,15 +493,15 @@
     },
     baths: { 1: "1 Bath", 2: "2 Baths", 3: "3 Baths", 4: "4+ Baths" },
     community: {
-      marina: "Dubai Marina",
+      marina: "New Cairo",
       downtown: "Downtown",
-      palm: "Palm Jumeirah",
-      "business-bay": "Business Bay",
-      hills: "Dubai Hills",
-      creek: "Creek Harbour",
-      jvc: "JVC",
-      difc: "DIFC",
-      "arabian-ranches": "Arabian Ranches",
+      palm: "New Alamein Coast",
+      "business-bay": "New Administrative Capital",
+      hills: "Cairo Hills",
+      creek: "Nile Corniche",
+      jvc: "Zayed District",
+      difc: "Smart Village",
+      "arabian-ranches": "West Cairo Gardens",
     },
     furnishing: {
       furnished: "Furnished",
@@ -1104,7 +1104,10 @@
     });
 
     // Banner price inputs (map to same state keys)
-    [["bannerPriceMin", "priceMin"], ["bannerPriceMax", "priceMax"]].forEach(function (pair) {
+    [
+      ["bannerPriceMin", "priceMin"],
+      ["bannerPriceMax", "priceMax"],
+    ].forEach(function (pair) {
       var input = document.getElementById(pair[0]);
       if (!input) return;
       var timer;
@@ -1222,7 +1225,14 @@
       document.querySelectorAll(".filter-tag--active").forEach(function (t) {
         t.classList.remove("filter-tag--active");
       });
-      ["priceMin", "priceMax", "areaMin", "areaMax", "bannerPriceMin", "bannerPriceMax"].forEach(function (id) {
+      [
+        "priceMin",
+        "priceMax",
+        "areaMin",
+        "areaMax",
+        "bannerPriceMin",
+        "bannerPriceMax",
+      ].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.value = "";
       });
