@@ -6,6 +6,84 @@
 (function () {
   "use strict";
 
+  var SWIPER_RESUME_DELAY = 3200;
+
+  function pauseThenResumeAutoplay(swiper, delay) {
+    if (!swiper || !swiper.autoplay) return;
+
+    if (swiper.__resumeTimer) {
+      clearTimeout(swiper.__resumeTimer);
+      swiper.__resumeTimer = null;
+    }
+
+    swiper.autoplay.stop();
+    swiper.__resumeTimer = setTimeout(function () {
+      if (!swiper.destroyed && swiper.autoplay) {
+        swiper.autoplay.start();
+      }
+    }, delay || SWIPER_RESUME_DELAY);
+  }
+
+  function bindSwiperInteractionPause(swiper, options) {
+    if (!swiper || !options) return;
+
+    function bindClick(selector) {
+      if (!selector) return;
+      var el = document.querySelector(selector);
+      if (!el) return;
+      el.addEventListener("click", function () {
+        pauseThenResumeAutoplay(swiper);
+      });
+    }
+
+    bindClick(options.paginationEl);
+    bindClick(options.prevEl);
+    bindClick(options.nextEl);
+
+    if (options.containerEl) {
+      var container = document.querySelector(options.containerEl);
+      if (container) {
+        container.addEventListener("touchend", function () {
+          pauseThenResumeAutoplay(swiper);
+        });
+      }
+    }
+  }
+
+  function bindPaginationLoopFix(swiper, paginationSelector) {
+    if (!swiper || !paginationSelector) return;
+    var paginationEl = document.querySelector(paginationSelector);
+    if (!paginationEl) return;
+
+    paginationEl.addEventListener("click", function (e) {
+      var target = e.target;
+      while (target && target !== paginationEl) {
+        if (
+          target.classList &&
+          target.classList.contains("swiper-pagination-bullet")
+        ) {
+          var bullets = paginationEl.querySelectorAll(".swiper-pagination-bullet");
+          var idx = -1;
+          for (var i = 0; i < bullets.length; i++) {
+            if (bullets[i] === target) {
+              idx = i;
+              break;
+            }
+          }
+
+          if (idx > -1) {
+            // Force real index mapping in loop mode to avoid wrong fallback slide.
+            setTimeout(function () {
+              if (!swiper.destroyed) swiper.slideToLoop(idx);
+            }, 0);
+          }
+          break;
+        }
+        target = target.parentNode;
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
@@ -93,9 +171,11 @@
     closeBtn.addEventListener("click", closeMenu);
     backdrop.addEventListener("click", closeMenu);
 
-    menu.querySelectorAll(".navbar__link, .navbar__cta").forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
+    menu
+      .querySelectorAll(".navbar__link, .navbar__cta")
+      .forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
 
     // Fix freeze: clean up when resizing back to desktop
     window.addEventListener("resize", function () {
@@ -126,19 +206,25 @@
       loop: true,
       autoplay: {
         delay: 5000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       pagination: {
         el: ".hero__slider-pagination",
         clickable: true,
       },
     });
+    bindSwiperInteractionPause(heroSwiper, {
+      containerEl: "#heroSwiper",
+      paginationEl: ".hero__slider-pagination",
+    });
+    bindPaginationLoopFix(heroSwiper, ".hero__slider-pagination");
 
     // Thumbnail click → slide to that index
     thumbs.forEach(function (thumb) {
       thumb.addEventListener("click", function () {
         var idx = parseInt(this.getAttribute("data-slide"), 10);
         heroSwiper.slideToLoop(idx, 900);
+        pauseThenResumeAutoplay(heroSwiper);
       });
     });
 
@@ -183,7 +269,7 @@
       },
       autoplay: {
         delay: 4200,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         480: {
@@ -204,11 +290,13 @@
         },
       },
     });
-    projectsSwiper.on("slideChangeTransitionEnd", function () {
-      if (projectsSwiper.isEnd) {
-        projectsSwiper.slideToLoop(0, 0, false);
-      }
+    bindSwiperInteractionPause(projectsSwiper, {
+      containerEl: "#projectsSwiper",
+      paginationEl: ".projects__pagination",
+      prevEl: "#projPrev",
+      nextEl: "#projNext",
     });
+    bindPaginationLoopFix(projectsSwiper, ".projects__pagination");
     // ---- Properties Slider ----
     // Centered, cinematic card focus with fade-up active slide
     var propertiesSwiper = new Swiper("#propertiesSwiper", {
@@ -228,7 +316,7 @@
       },
       autoplay: {
         delay: 4200,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       pagination: {
         el: ".properties__pagination",
@@ -249,13 +337,13 @@
         },
       },
     });
-
-    // Safety guard: keep carousel moving seamlessly if loop edge is reached.
-    propertiesSwiper.on("slideChangeTransitionEnd", function () {
-      if (propertiesSwiper.isEnd) {
-        propertiesSwiper.slideToLoop(0, 0, false);
-      }
+    bindSwiperInteractionPause(propertiesSwiper, {
+      containerEl: "#propertiesSwiper",
+      paginationEl: ".properties__pagination",
+      prevEl: "#propertiesPrev",
+      nextEl: "#propertiesNext",
     });
+    bindPaginationLoopFix(propertiesSwiper, ".properties__pagination");
 
     // ---- Blogs Slider ----
     var blogsSwiper = new Swiper("#blogsSwiper", {
@@ -270,7 +358,7 @@
       },
       autoplay: {
         delay: 5000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         640: {
@@ -283,10 +371,10 @@
         },
       },
     });
-    blogsSwiper.on("slideChangeTransitionEnd", function () {
-      if (blogsSwiper.isEnd) {
-        blogsSwiper.slideToLoop(0, 0, false);
-      }
+    bindSwiperInteractionPause(blogsSwiper, {
+      containerEl: "#blogsSwiper",
+      prevEl: "#blogPrev",
+      nextEl: "#blogNext",
     });
   }
 
