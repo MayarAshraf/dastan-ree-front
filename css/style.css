@@ -1169,7 +1169,8 @@ textarea {
   top: 50%;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.35);
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
   flex-shrink: 0;
   transition:
     transform var(--transition-fast),
@@ -3486,7 +3487,7 @@ body.splash-active {
 /* Rotate chevron when dropdown open */
 .filter-banner__select-wrap
   .ts-wrapper.dropdown-active
-  .filter-banner__chevron {
+  + .filter-banner__chevron {
   color: var(--color-accent);
   transform: translateY(-50%) rotate(180deg);
 }

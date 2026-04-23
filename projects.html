@@ -1536,12 +1536,24 @@
         document
           .querySelectorAll(".filter-banner__select")
           .forEach(function (el) {
-            new TomSelect(el, {
+            var ts = new TomSelect(el, {
               create: false,
               allowEmptyOption: true,
               dropdownParent: "body",
               dropdownClass: "ts-dropdown filter-banner-ts-dropdown",
             });
+            var chevron = ts.wrapper.nextElementSibling;
+            if (chevron) {
+              chevron.addEventListener("mousedown", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (ts.isOpen) {
+                  ts.close();
+                } else {
+                  ts.open();
+                }
+              });
+            }
           });
       });
     </script>
