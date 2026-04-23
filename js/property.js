@@ -7,51 +7,51 @@
 
   var GALLERY_IMAGES = [
     {
-      src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/7MPDT6XMGG97XRZEM681VEC010/c13479f4-86e0-4f17-ad13-763c076ea27d/416x272.jpg",
       caption: "Nile Gate — Exterior View",
     },
     {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/V5AC9H0VGP16BFHVBTVRTC3YAW/bd6120e5-9376-42ed-b78c-042eaba4b035/416x272.jpg",
       caption: "Open-Plan Living Room",
     },
     {
-      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/76TVB5YBSMNRG1KN86H85KADSG/a3603a64-f992-4244-8348-8a2e10a5221c/416x272.jpg",
       caption: "Modern Italian Kitchen",
     },
     {
-      src: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/VJEZVX6AGN1V44J37EV78K6QB8/dc40ef99-a4e6-44eb-9382-fbcd37d69b1b/416x272.jpg",
       caption: "Master Bedroom with Sea View",
     },
     {
-      src: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/D090S9BNZVS1SC3YFWW5S4RST0/2b09d3d6-70b3-437b-b3b9-4d4d0be90a0c/416x272.jpg",
       caption: "Infinity Swimming Pool",
     },
     {
-      src: "https://images.unsplash.com/photo-1615529162924-f8605388461d?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/4AGKN92MR47GSDSTA7KG241Q2W/01c26e33-e46a-4948-9eeb-1693ea58a2a2/416x272.jpg",
       caption: "Second Living Area",
     },
     {
-      src: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/6QV9VTD2N8ZMJ51JDCJ0MTHDGW/040af64e-960e-45b5-8a8f-8b054b4a75cd/416x272.jpg",
       caption: "En-Suite Bathroom",
     },
     {
-      src: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/YDXYB7VWJ4WFQGJH2X8GX6BRJ0/ffa89ecc-2175-49c6-8be4-9ff69aaff647/416x272.jpg",
       caption: "Panoramic Balcony",
     },
     {
-      src: "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/793ECVE42FWED1Q8ATAZWK3B58/e1816285-5d17-432b-b416-fa9c598bf12c/416x272.jpg",
       caption: "State-of-the-Art Gymnasium",
     },
     {
-      src: "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/AFEB59WEM25QKFKTJCQEN1VDM0/fd325989-aa89-4183-9f96-ab12c909d8d7/416x272.jpg",
       caption: "Grand Lobby",
     },
     {
-      src: "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/APN7VCXF0RFQM0M94CGX0F1QCM/81077f3c-d5f0-43a8-8da0-481a5ed50906/416x272.jpg",
       caption: "Nile Skyline at Night",
     },
     {
-      src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400&q=80",
+      src: "https://static.shared.propertyfinder.eg/media/images/listing/EJEAFG169VA2C8Y5JGDHHXAHE0/ca7c6931-87f2-4548-a206-02c31fad4138/416x272.jpg",
       caption: "Master Plan Overview",
     },
   ];
