@@ -18,7 +18,8 @@
       location: "Makadi Heights, Hurghada",
       community: "marina",
       communityLabel: "Makadi",
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       priceRaw: 18000000,
       priceDisplay: "EGP 18,000,000",
       beds: 4,
@@ -39,7 +40,8 @@
       location: "Al Maqsad, New Capital City",
       community: "business-bay",
       communityLabel: "New Capital City",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
       priceRaw: 2500000,
       priceDisplay: "EGP 2,500,000",
       beds: 3,
@@ -60,7 +62,8 @@
       location: "El Nady District, Shorouk City",
       community: "hills",
       communityLabel: "Shorouk City",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
       priceRaw: 4180000,
       priceDisplay: "EGP 4,180,000",
       beds: 3,
@@ -81,7 +84,8 @@
       location: "R3, New Capital City",
       community: "business-bay",
       communityLabel: "New Capital City",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
       priceRaw: 3300000,
       priceDisplay: "EGP 3,300,000",
       beds: 3,
@@ -102,7 +106,8 @@
       location: "DeJoya 4, New Capital City",
       community: "business-bay",
       communityLabel: "New Capital City",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
       priceRaw: 6648300,
       priceDisplay: "EGP 6,648,300",
       beds: 3,
@@ -123,7 +128,8 @@
       location: "Noor City, Cairo",
       community: "creek",
       communityLabel: "Noor City",
-      image: "https://images.unsplash.com/photo-1600566753086-00f18cf6b3ea?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
       priceRaw: 22000000,
       priceDisplay: "EGP 22,000,000",
       beds: 4,
@@ -144,7 +150,8 @@
       location: "B8, Madinaty, Cairo",
       community: "difc",
       communityLabel: "Madinaty",
-      image: "https://images.unsplash.com/photo-1600585154526-990dced4ec0f?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
       priceRaw: 14000000,
       priceDisplay: "EGP 14,000,000",
       beds: 3,
@@ -165,7 +172,8 @@
       location: "DeJoya 4, New Capital City",
       community: "business-bay",
       communityLabel: "New Capital City",
-      image: "https://images.unsplash.com/photo-1600573472591-ee6981cf81f0?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
       priceRaw: 6600000,
       priceDisplay: "EGP 6,600,000",
       beds: 3,
@@ -186,7 +194,8 @@
       location: "Sarai, Mostakbal City",
       community: "arabian-ranches",
       communityLabel: "Mostakbal City",
-      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
       priceRaw: 9180000,
       priceDisplay: "EGP 9,180,000",
       beds: 4,
@@ -207,7 +216,8 @@
       location: "Privado, Madinaty, Cairo",
       community: "difc",
       communityLabel: "Madinaty",
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
       priceRaw: 10700000,
       priceDisplay: "EGP 10,700,000",
       beds: 2,
@@ -228,7 +238,8 @@
       location: "New Cairo City, Cairo",
       community: "marina",
       communityLabel: "New Cairo",
-      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
       priceRaw: 4700000,
       priceDisplay: "EGP 4,700,000",
       beds: 3,
@@ -249,7 +260,8 @@
       location: "Remal, Ras Al Hekma, North Coast",
       community: "palm",
       communityLabel: "North Coast",
-      image: "https://images.unsplash.com/photo-1600585154367-904823e1f9d4?w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
       priceRaw: 6400000,
       priceDisplay: "EGP 6,400,000",
       beds: 1,
